@@ -1,0 +1,28 @@
+#
+# ~/.bashrc
+#
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+PS1="\[\033[01;31m\]\h\[\033[01;34m\] \W \$\[\033[00m\]"
+HISTSIZE=10000
+
+## Colorize the ls command output and define ll alias
+alias ll='ls -la'
+alias ls='ls --color=auto'
+
+## Define .. and ... alias
+alias ..='cd ..' 
+alias ...='cd ../..' 
+
+## Colorize the diff command output (colordiff package needed)
+alias diff='colordiff'
+
+## Colorize the grep command output for ease of use (good for log files)##
+alias grep='grep --color=auto'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+
+## Interactive rm, cp and mv
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'

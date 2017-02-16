@@ -1,0 +1,42 @@
+#
+# ~/.bashrc
+#
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+PS1="\[\033[01;32m\]\u@\h\[\033[01;34m\] \W \$\[\033[00m\]"
+HISTSIZE=10000
+
+shopt -s checkwinsize
+
+## sudo alias for other aliases to work with sudo
+alias sudo='sudo '
+
+## Colorize the ls command output and define ll alias
+alias ls='ls --color=auto'
+alias ll='ls -la'
+alias lrt='ls -lrt'
+
+## Define .. and ... alias
+alias ..='cd ..' 
+alias ...='cd ../..' 
+
+## Colorize the diff command output (colordiff package needed)
+alias diff='colordiff'
+
+## Colorize the grep command output for ease of use (good for log files)##
+alias grep='grep --color=auto'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+
+## Interactive rm, cp and mv
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+
+## Password generator
+genpasswd() {
+  local l=$1
+  [ "$l" == "" ] && l=16
+  tr -dc A-Za-z0-9_ < /dev/urandom | head -c ${l} | xargs
+}
