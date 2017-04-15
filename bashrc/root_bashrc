@@ -9,6 +9,7 @@ HISTSIZE=10000
 ## Colorize the ls command output and define ll alias
 alias ll='ls -la'
 alias ls='ls --color=auto'
+alias lrt='ls -lrt'
 
 ## Define .. and ... alias
 alias ..='cd ..' 
