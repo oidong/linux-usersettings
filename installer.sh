@@ -10,7 +10,6 @@ function configureSettingszsh {
 	git clone git://github.com/robbyrussell/oh-my-zsh.git /etc/skel/.oh-my-zsh
 	cp zsh/oidong.zsh /etc/skel/.oh-my-zsh/custom/oidong.zsh
 	cp zsh/.zshrc /etc/skel/.zshrc
-	echo "[*]Installed $app settings"
 }
 
 function configureSettingsvim {
@@ -23,18 +22,15 @@ function configureSettingsvim {
 	echo 'set number' >> /etc/vimrc
 
 	cp vim-plugins/*.vim ${VIM_PATH}/plugin/
-	echo "[*]Installed $app settings"
 }
 
 function configureSettingsscreen {
 	echo 'caption always "%{rw} * | %H * $LOGNAME | %{bw}%c %D | %{-}%-Lw%{rw}%50>%{rW}%n%f* %t %{-}%+Lw%<"' >> /etc/screenrc
-	echo "[*]Installed $app settings"
 }
 
 function configureSettingsncmpcpp {
 	mkdir /etc/skel/.ncmpcpp
 	cp ncmpcpp/config /etc/skel/.ncmpcpp/config
-	echo "[*]Installed $app settings"
 }
 
 for app in ${apps[*]}
@@ -45,6 +41,7 @@ do
   then
     echo "[*]Found $app... will install settings"
     configureSettings$app $app
+    echo "[*]Installed $app settings"
   else
   	echo "[*]$app not found, skipping..."
   fi
