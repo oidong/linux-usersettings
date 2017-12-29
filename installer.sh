@@ -1,6 +1,6 @@
 #!/bin/bash
 
-apps=('zsh' 'vim' 'screen' 'ncmpcpp')
+apps=('zsh' 'vim' 'screen' 'ncmpcpp' 'conky')
 
 cp bashrc/root_bashrc /root/.bashrc
 cp bashrc/user_bashrc /etc/skel/.bashrc
@@ -31,6 +31,11 @@ function configureSettingsscreen {
 function configureSettingsncmpcpp {
 	mkdir /etc/skel/.ncmpcpp
 	cp ncmpcpp/config /etc/skel/.ncmpcpp/config
+}
+
+function configureSettingsconcy {
+	mkdir -p /etc/skel/.config/conky
+	cp conky/conky.conf /etc/skel/.config/conky/conky.conf
 }
 
 for app in ${apps[*]}
