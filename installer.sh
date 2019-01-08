@@ -25,7 +25,7 @@ function configureSettingsvim {
 }
 
 function configureSettingsscreen {
-	echo 'caption always "%{RK}[%{yK}$LOGNAME%{R}@%{BK}%H%{RK}] %{-}%-Lw%{RK}%50>%{RK}%n%f* %t %{-}%+Lw%< %-=%{R}[%{c}%D %d %M %{BK}%c%{R}]%{d}"' >> /etc/screenrc
+	echo 'caption always "%{RK}[%{yK}$LOGNAME%{R}@%{BK}%H%{RK}] %{-}%-Lw%{.RK.}%50>%{RK}%n%f* %t %{-}%+Lw%< %-=%{R}[%{c}%D %d %M %{BK}%c%{R}]%{d}"' >> /etc/screenrc
 }
 
 function configureSettingsncmpcpp {
