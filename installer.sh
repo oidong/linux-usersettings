@@ -20,6 +20,7 @@ function configureSettingsvim {
 	echo 'filetype plugin on' >> /etc/vimrc
 	echo 'syntax on' >> /etc/vimrc
 	echo 'set number' >> /etc/vimrc
+	echo 'autocmd FileType yaml setlocal ai ts=2 sw=2 et' >> /etc/vimrc
 
 	cp vim-plugins/*.vim ${VIM_PATH}/plugin/
 }
