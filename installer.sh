@@ -16,6 +16,7 @@ function configureSettingsvim {
 	VIM_VERSION=`vim --version | head -n1 | cut -d ' ' -f 5 | tr -d .`
 	VIM_PATH='/usr/share/vim/vim'${VIM_VERSION}
 
+	echo 'color ron' >> /etc/vimrc
 	echo 'set mouse=' >> /etc/vimrc
 	echo 'filetype plugin on' >> /etc/vimrc
 	echo 'syntax on' >> /etc/vimrc
